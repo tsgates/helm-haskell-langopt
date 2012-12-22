@@ -1,5 +1,5 @@
 ;;
-;; generated @2012-12-22 01:15:23
+;; generated @2012-12-22 01:22:23
 ;;
 (defvar haskell-langopts '(
 "OverlappingInstances          : Enable overlapping instances"
@@ -85,13 +85,13 @@
 ;; TODO.
 ;;   check duplicated declaration, and drop
 ;;
-;;;###autoload
 (defun insert-haskell-langopt (candid)
   (let ((opt (replace-regexp-in-string "[ ]*:[^:]+" "" candid)))
     (save-excursion
       (goto-char (point-min))
       (insert (concat "{-# LANGUAGE " opt " #-}\n")))))
 
+;;;###autoload
 (defun helm-haskell-langopt ()
   (interactive)
   (helm :sources '(helm-c-source-haskell-langopt)
